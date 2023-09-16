@@ -13,25 +13,22 @@ Explanation:
 - index 4 --> the greatest element to the right of index 4 is index 5 (1).
 - index 5 --> there are no elements to the right of index 5, so we put -1. */
 
-var replaceElements=function(arr){
-    const n=arr.length
-    for(i=0;i<n-1;i++){
-        
-        let max=arr[i+1]
+var replaceElements = function (arr) {
+  const n = arr.length;
+  for (i = 0; i < n - 1; i++) {
+    let max = arr[i + 1];
 
-        for(let j=i+2;j<n;j++){
-            
-            if(arr[j]>max){
-                max=arr[j]
-
-            }
-        }
-        arr[i]=max
+    for (let j = i + 2; j < n; j++) {
+      if (arr[j] > max) {
+        max = arr[j];
+      }
     }
-    arr[n-1]=-1
-    return arr
-}
+    arr[i] = max;
+  }
+  arr[n - 1] = -1;
+  return arr;
+};
 
-const inputArray=[17,18,5,4,6,1]
-const result=replaceElements(inputArray)
-console.log(result)
+const inputArray = [17, 18, 5, 4, 6, 1];
+const result = replaceElements(inputArray);
+console.log(result);
